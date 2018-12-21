@@ -35,6 +35,7 @@
             this.btnAddText = new System.Windows.Forms.Button();
             this.btnSaveAs = new System.Windows.Forms.Button();
             this.btnMany = new System.Windows.Forms.Button();
+            this.btnVideo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pic)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,7 +89,7 @@
             // 
             // btnMany
             // 
-            this.btnMany.Location = new System.Drawing.Point(185, 421);
+            this.btnMany.Location = new System.Drawing.Point(125, 421);
             this.btnMany.Name = "btnMany";
             this.btnMany.Size = new System.Drawing.Size(75, 23);
             this.btnMany.TabIndex = 5;
@@ -96,11 +97,22 @@
             this.btnMany.UseVisualStyleBackColor = true;
             this.btnMany.Click += new System.EventHandler(this.btnMany_Click);
             // 
+            // btnVideo
+            // 
+            this.btnVideo.Location = new System.Drawing.Point(206, 421);
+            this.btnVideo.Name = "btnVideo";
+            this.btnVideo.Size = new System.Drawing.Size(75, 23);
+            this.btnVideo.TabIndex = 6;
+            this.btnVideo.Text = "播放视频";
+            this.btnVideo.UseVisualStyleBackColor = true;
+            this.btnVideo.Click += new System.EventHandler(this.btnVideo_Click);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(494, 493);
+            this.ClientSize = new System.Drawing.Size(494, 491);
+            this.Controls.Add(this.btnVideo);
             this.Controls.Add(this.btnMany);
             this.Controls.Add(this.btnSaveAs);
             this.Controls.Add(this.btnAddText);
@@ -129,6 +141,7 @@
         private System.Windows.Forms.Button btnAddText;
         private System.Windows.Forms.Button btnSaveAs;
         private System.Windows.Forms.Button btnMany;
+        private System.Windows.Forms.Button btnVideo;
     }
 }
 

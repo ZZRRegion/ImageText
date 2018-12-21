@@ -88,5 +88,14 @@ namespace ImageText
             });
            
         }
+
+        private void btnVideo_Click(object sender, EventArgs e)
+        {
+            FrmVideo frmVideo = new FrmVideo();
+            if(frmVideo.ShowDialog(this) == DialogResult.OK)
+            {
+
+            }
+        }
     }
 }
