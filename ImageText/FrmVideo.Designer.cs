@@ -35,6 +35,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.numFrm = new System.Windows.Forms.NumericUpDown();
             this.btnSet = new System.Windows.Forms.Button();
+            this.lblF = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picVideo)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numFrm)).BeginInit();
@@ -53,9 +54,9 @@
             // 
             // btnSelectVideo
             // 
-            this.btnSelectVideo.Location = new System.Drawing.Point(313, 17);
+            this.btnSelectVideo.Location = new System.Drawing.Point(338, 17);
             this.btnSelectVideo.Name = "btnSelectVideo";
-            this.btnSelectVideo.Size = new System.Drawing.Size(112, 23);
+            this.btnSelectVideo.Size = new System.Drawing.Size(95, 23);
             this.btnSelectVideo.TabIndex = 1;
             this.btnSelectVideo.Text = "选择视频...";
             this.btnSelectVideo.UseVisualStyleBackColor = true;
@@ -65,13 +66,13 @@
             // 
             this.pgb.Location = new System.Drawing.Point(22, 17);
             this.pgb.Name = "pgb";
-            this.pgb.Size = new System.Drawing.Size(230, 23);
+            this.pgb.Size = new System.Drawing.Size(189, 23);
             this.pgb.TabIndex = 2;
             // 
             // lblMemo
             // 
             this.lblMemo.AutoSize = true;
-            this.lblMemo.Location = new System.Drawing.Point(257, 22);
+            this.lblMemo.Location = new System.Drawing.Point(217, 22);
             this.lblMemo.Name = "lblMemo";
             this.lblMemo.Size = new System.Drawing.Size(29, 12);
             this.lblMemo.TabIndex = 3;
@@ -79,6 +80,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lblF);
             this.panel1.Controls.Add(this.numFrm);
             this.panel1.Controls.Add(this.btnSet);
             this.panel1.Controls.Add(this.btnSelectVideo);
@@ -112,6 +114,15 @@
             this.btnSet.UseVisualStyleBackColor = true;
             this.btnSet.Click += new System.EventHandler(this.btnSet_Click);
             // 
+            // lblF
+            // 
+            this.lblF.AutoSize = true;
+            this.lblF.Location = new System.Drawing.Point(271, 22);
+            this.lblF.Name = "lblF";
+            this.lblF.Size = new System.Drawing.Size(29, 12);
+            this.lblF.TabIndex = 7;
+            this.lblF.Text = "播放";
+            // 
             // FrmVideo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -119,10 +130,12 @@
             this.ClientSize = new System.Drawing.Size(731, 626);
             this.Controls.Add(this.picVideo);
             this.Controls.Add(this.panel1);
+            this.KeyPreview = true;
             this.MaximizeBox = true;
             this.Name = "FrmVideo";
             this.Text = "播放视频";
             this.Load += new System.EventHandler(this.FrmVideo_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmVideo_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.picVideo)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -140,5 +153,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.NumericUpDown numFrm;
         private System.Windows.Forms.Button btnSet;
+        private System.Windows.Forms.Label lblF;
     }
 }

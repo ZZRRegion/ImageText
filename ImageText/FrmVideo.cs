@@ -11,6 +11,7 @@ using Emgu.CV;
 using Emgu.CV.Structure;
 using System.Threading;
 using Emgu.CV.CvEnum;
+using System.IO;
 
 namespace ImageText
 {
@@ -30,15 +31,15 @@ namespace ImageText
         {
             if(this.videoCapture != null)
             {
-                //Mat mat = this.videoCapture.QueryFrame();
                 Mat mat = new Mat();
                 this.videoCapture.Read(mat);
                 Image<Bgr, byte> img = mat.ToImage<Bgr, byte>();
                 img.Draw("www.baidu.com", new Point(0, 100), FontFace.HersheyDuplex, 2, new Bgr(0, 255, 255), 2);
                 this.picVideo.BackgroundImage = img.ToBitmap();
-                //Thread.Sleep((int)(1000.0 / this.fps) - 5);
+                Thread.Sleep((int)(1000.0 / this.fps) - 5);
                 this.index++;
                 this.pgb.Value = (int)this.index;
+                this.lblF.Text = $"{this.index}/{this.FrameCount}";
                 double value = this.index / this.FrameCount * 100;
                 this.lblMemo.Text = value.ToString("F2") + "%";
                 mat.Dispose();
@@ -69,6 +70,23 @@ namespace ImageText
             if(this.videoCapture != null)
             {
                 bool b = this.videoCapture.SetCaptureProperty(CapProp.PosFrames, (int)this.numFrm.Value);
+            }
+        }
+
+        private void FrmVideo_KeyDown(object sender, KeyEventArgs e)
+        {
+            string path = "Picture";
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
+            string fileName = DateTime.Now.ToString("yyyyMMddHHmmss") + ".jpg";
+            fileName = Path.Combine(path, fileName);
+            switch (e.KeyCode)
+            {
+                case Keys.F1:
+                    this.picVideo.BackgroundImage.Save(fileName);
+                    break;
             }
         }
     }
