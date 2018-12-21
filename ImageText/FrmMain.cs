@@ -21,6 +21,7 @@ namespace ImageText
         public FrmMain()
         {
             InitializeComponent();
+            this.Text += $"[{DevCommon.Version},{DevCommon.VersionTime}]";
         }
 
         private void btnSelect_Click(object sender, EventArgs e)
