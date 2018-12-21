@@ -54,8 +54,9 @@ namespace ImageText
             {
                 this.index = 0;
                 this.videoCapture = new VideoCapture(ofd.FileName);
-                this.fps = (int)this.videoCapture.GetCaptureProperty(Emgu.CV.CvEnum.CapProp.Fps);
-                this.FrameCount = this.videoCapture.GetCaptureProperty(Emgu.CV.CvEnum.CapProp.FrameCount);
+                this.fps = (int)this.videoCapture.GetCaptureProperty(CapProp.Fps);
+                this.FrameCount = this.videoCapture.GetCaptureProperty(CapProp.FrameCount);
+                this.videoCapture.SetCaptureProperty(CapProp.PvapiMulticastip, 10);
                 this.pgb.Maximum = (int)this.FrameCount;
                 this.numFrm.Maximum = (decimal)this.FrameCount;
             }
