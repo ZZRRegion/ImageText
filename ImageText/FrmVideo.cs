@@ -64,6 +64,7 @@ namespace ImageText
 
         private void FrmVideo_Load(object sender, EventArgs e)
         {
+
         }
 
         private void btnSet_Click(object sender, EventArgs e)
@@ -71,6 +72,7 @@ namespace ImageText
             if(this.videoCapture != null)
             {
                 bool b = this.videoCapture.SetCaptureProperty(CapProp.PosFrames, (int)this.numFrm.Value);
+                this.index = (int)this.numFrm.Value;
             }
         }
 
